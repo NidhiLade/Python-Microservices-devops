@@ -1,0 +1,15 @@
+- name: Send email notification
+  uses: dawidd6/action-send-mail@v3
+  continue-on-error: true
+  with:
+    server_address: smtp.gmail.com
+    server_port: 465
+    username: ${{ secrets.EMAIL_USERNAME }}
+    password: ${{ secrets.EMAIL_PASSWORD }}
+    subject: "✅ GitHub Actions Finished"
+    to: "nidhi.lade@sdbi.in"
+    from: "GitHub Actions <nidhi.lade@sdbi.in>"
+    body: |
+      Hello Nidhi 👋
+      
+      Your GitHub Actions pipeline has completed successfully!
